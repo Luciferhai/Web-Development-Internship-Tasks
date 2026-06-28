@@ -1,1 +1,135 @@
-<!DOCTYPE html><html><head><link href='https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap' rel='stylesheet'><link rel='stylesheet' href='style.css'></head><body><article><h2>AI Trends</h2><p>By John | June 2026</p><p>Summary...</p></article><article><h2>Web Dev</h2><p>By Jane | June 2026</p><p>Summary...</p></article><article><h2>Cloud</h2><p>By Alex | June 2026</p><p>Summary...</p></article></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chronicles | Dev &amp; Tech Blog</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">Chronicles<span>.</span></a>
+            <div class="nav-search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" placeholder="Search articles...">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">Articles</a></li>
+                <li><a href="#">Newsletter</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container main-layout">
+        <!-- Main Content Area -->
+        <main class="articles-area">
+            <!-- Category Filter Bar -->
+            <div class="category-filters">
+                <button class="filter-btn active">All Posts</button>
+                <button class="filter-btn">AI Trends</button>
+                <button class="filter-btn">Web Dev</button>
+                <button class="filter-btn">Cloud</button>
+            </div>
+
+            <!-- Featured Post -->
+            <article class="featured-post glass-card">
+                <div class="featured-img-wrapper">
+                    <img src="https://picsum.photos/800/450?random=11" alt="AI Trends">
+                </div>
+                <div class="featured-content">
+                    <span class="category-badge ai-badge">AI Trends</span>
+                    <h2>Navigating the Future: Key AI Trends Shaping 2026</h2>
+                    <p>Artificial Intelligence is changing the landscape of software engineering and cloud operations. In this deep dive, we explore agentic workflows, multi-modal LLMs, and localized computing models.</p>
+                    <div class="post-meta">
+                        <div class="author">
+                            <div class="author-avatar"><i class="fa-solid fa-user-ninja"></i></div>
+                            <div>
+                                <span class="author-name">John Doe</span>
+                                <span class="post-date">June 18, 2026 &bull; 8 min read</span>
+                            </div>
+                        </div>
+                        <a href="#" class="read-more-btn">Read Article <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Articles Grid -->
+            <div class="articles-grid">
+                <article class="post-card glass-card">
+                    <div class="card-img-wrapper">
+                        <img src="https://picsum.photos/600/400?random=12" alt="Web Dev">
+                    </div>
+                    <div class="card-content">
+                        <span class="category-badge dev-badge">Web Dev</span>
+                        <h3>Modern Layout Architectures with CSS Container Queries</h3>
+                        <p>How container queries are replacing traditional media queries to enable component-driven responsive layouts.</p>
+                        <div class="post-meta">
+                            <div class="author">
+                                <div class="author-avatar"><i class="fa-solid fa-user-astronaut"></i></div>
+                                <div>
+                                    <span class="author-name">Jane Smith</span>
+                                    <span class="post-date">June 15, 2026 &bull; 5 min read</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="post-card glass-card">
+                    <div class="card-img-wrapper">
+                        <img src="https://picsum.photos/600/400?random=13" alt="Cloud">
+                    </div>
+                    <div class="card-content">
+                        <span class="category-badge cloud-badge">Cloud</span>
+                        <h3>Serverless Databases: Scaling to Zero and Multi-Region Sync</h3>
+                        <p>An in-depth analysis of next-generation relational database engines running on edge compute networks.</p>
+                        <div class="post-meta">
+                            <div class="author">
+                                <div class="author-avatar"><i class="fa-solid fa-user-doctor"></i></div>
+                                <div>
+                                    <span class="author-name">Alex Johnson</span>
+                                    <span class="post-date">June 12, 2026 &bull; 6 min read</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </main>
+
+        <!-- Sidebar Area -->
+        <aside class="sidebar">
+            <div class="sidebar-widget glass-card newsletter-widget">
+                <h3>Subscribe to Newsletter</h3>
+                <p>Get the latest web dev insights delivered directly to your inbox weekly.</p>
+                <form onsubmit="event.preventDefault(); alert('Subscribed successfully!');">
+                    <input type="email" placeholder="Your Email Address" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+
+            <div class="sidebar-widget glass-card tags-widget">
+                <h3>Popular Tags</h3>
+                <div class="tags-list">
+                    <a href="#" class="tag-link">#react</a>
+                    <a href="#" class="tag-link">#ai</a>
+                    <a href="#" class="tag-link">#css</a>
+                    <a href="#" class="tag-link">#nextjs</a>
+                    <a href="#" class="tag-link">#serverless</a>
+                    <a href="#" class="tag-link">#git</a>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Chronicles Blog. All rights reserved.</p>
+    </footer>
+</body>
+</html>

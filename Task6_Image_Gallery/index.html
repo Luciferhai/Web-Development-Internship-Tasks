@@ -1,1 +1,222 @@
-<!DOCTYPE html><html><head><link rel='stylesheet' href='style.css'></head><body><div class='g'><img src='https://picsum.photos/400/300?random=1'><img src='https://picsum.photos/400/300?random=2'><img src='https://picsum.photos/400/300?random=3'><img src='https://picsum.photos/400/300?random=4'><img src='https://picsum.photos/400/300?random=5'><img src='https://picsum.photos/400/300?random=6'></div></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visuals | Premium Creative Gallery</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="glow-bg"></div>
+
+    <header class="gallery-header">
+        <h1>Creative Showcase</h1>
+        <p>A curated exhibition of high-fidelity landscape and tech-art concept captures.</p>
+        
+        <div class="filter-bar">
+            <button class="filter-btn active" data-filter="all">All Assets</button>
+            <button class="filter-btn" data-filter="nature">Nature</button>
+            <button class="filter-btn" data-filter="tech">Technology</button>
+            <button class="filter-btn" data-filter="architecture">Architecture</button>
+        </div>
+    </header>
+
+    <main class="gallery-container">
+        <div class="gallery-grid" id="gallery-grid">
+            <!-- Item 1 (Nature) -->
+            <div class="gallery-item glass-card" data-category="nature">
+                <div class="img-wrapper">
+                    <img src="https://picsum.photos/800/600?random=21" alt="Ethereal Forest">
+                </div>
+                <div class="item-overlay">
+                    <div class="overlay-info">
+                        <span class="category">Nature</span>
+                        <h3>Ethereal Forest</h3>
+                    </div>
+                    <button class="zoom-btn" title="View Fullscreen"><i class="fa-solid fa-expand"></i></button>
+                </div>
+            </div>
+
+            <!-- Item 2 (Tech) -->
+            <div class="gallery-item glass-card" data-category="tech">
+                <div class="img-wrapper">
+                    <img src="https://picsum.photos/800/600?random=22" alt="Neon Terminal">
+                </div>
+                <div class="item-overlay">
+                    <div class="overlay-info">
+                        <span class="category">Technology</span>
+                        <h3>Neon Terminal</h3>
+                    </div>
+                    <button class="zoom-btn" title="View Fullscreen"><i class="fa-solid fa-expand"></i></button>
+                </div>
+            </div>
+
+            <!-- Item 3 (Architecture) -->
+            <div class="gallery-item glass-card" data-category="architecture">
+                <div class="img-wrapper">
+                    <img src="https://picsum.photos/800/600?random=23" alt="Abstract Curvature">
+                </div>
+                <div class="item-overlay">
+                    <div class="overlay-info">
+                        <span class="category">Architecture</span>
+                        <h3>Abstract Curvature</h3>
+                    </div>
+                    <button class="zoom-btn" title="View Fullscreen"><i class="fa-solid fa-expand"></i></button>
+                </div>
+            </div>
+
+            <!-- Item 4 (Nature) -->
+            <div class="gallery-item glass-card" data-category="nature">
+                <div class="img-wrapper">
+                    <img src="https://picsum.photos/800/600?random=24" alt="Alpine Serenity">
+                </div>
+                <div class="item-overlay">
+                    <div class="overlay-info">
+                        <span class="category">Nature</span>
+                        <h3>Alpine Serenity</h3>
+                    </div>
+                    <button class="zoom-btn" title="View Fullscreen"><i class="fa-solid fa-expand"></i></button>
+                </div>
+            </div>
+
+            <!-- Item 5 (Tech) -->
+            <div class="gallery-item glass-card" data-category="tech">
+                <div class="img-wrapper">
+                    <img src="https://picsum.photos/800/600?random=25" alt="Quantum Array">
+                </div>
+                <div class="item-overlay">
+                    <div class="overlay-info">
+                        <span class="category">Technology</span>
+                        <h3>Quantum Array</h3>
+                    </div>
+                    <button class="zoom-btn" title="View Fullscreen"><i class="fa-solid fa-expand"></i></button>
+                </div>
+            </div>
+
+            <!-- Item 6 (Architecture) -->
+            <div class="gallery-item glass-card" data-category="architecture">
+                <div class="img-wrapper">
+                    <img src="https://picsum.photos/800/600?random=26" alt="Minimalist Pavilion">
+                </div>
+                <div class="item-overlay">
+                    <div class="overlay-info">
+                        <span class="category">Architecture</span>
+                        <h3>Minimalist Pavilion</h3>
+                    </div>
+                    <button class="zoom-btn" title="View Fullscreen"><i class="fa-solid fa-expand"></i></button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox" id="lightbox">
+        <span class="lightbox-close" id="lightbox-close"><i class="fa-solid fa-xmark"></i></span>
+        <span class="lightbox-arrow arrow-left" id="arrow-left"><i class="fa-solid fa-chevron-left"></i></span>
+        <div class="lightbox-content">
+            <img src="" id="lightbox-img" alt="Fullscreen Image">
+            <div class="lightbox-caption" id="lightbox-caption"></div>
+        </div>
+        <span class="lightbox-arrow arrow-right" id="arrow-right"><i class="fa-solid fa-chevron-right"></i></span>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Visuals Showcase. Curated with Precision.</p>
+    </footer>
+
+    <script>
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxCaption = document.getElementById('lightbox-caption');
+        const closeBtn = document.getElementById('lightbox-close');
+        const prevBtn = document.getElementById('arrow-left');
+        const nextBtn = document.getElementById('arrow-right');
+
+        let currentIndex = 0;
+        let visibleItems = [...galleryItems];
+
+        // Filtering
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelector('.filter-btn.active').classList.remove('active');
+                btn.classList.add('active');
+
+                const filter = btn.getAttribute('data-filter');
+                visibleItems = [];
+
+                galleryItems.forEach(item => {
+                    if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                        item.style.display = 'block';
+                        visibleItems.push(item);
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Lightbox Open
+        galleryItems.forEach((item, index) => {
+            const zoomBtn = item.querySelector('.zoom-btn');
+            const triggerOpen = () => {
+                currentIndex = visibleItems.indexOf(item);
+                openLightbox();
+            };
+            zoomBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                triggerOpen();
+            });
+            item.addEventListener('click', triggerOpen);
+        });
+
+        function openLightbox() {
+            if (currentIndex === -1) currentIndex = 0;
+            const targetItem = visibleItems[currentIndex];
+            const imgSrc = targetItem.querySelector('img').src;
+            const imgTitle = targetItem.querySelector('h3').innerText;
+
+            lightboxImg.src = imgSrc;
+            lightboxCaption.innerText = imgTitle;
+            lightbox.classList.add('active');
+        }
+
+        // Close Lightbox
+        closeBtn.addEventListener('click', () => {
+            lightbox.classList.remove('active');
+        });
+
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                lightbox.classList.remove('active');
+            }
+        });
+
+        // Navigation
+        prevBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            currentIndex = (currentIndex - 1 + visibleItems.length) % visibleItems.length;
+            openLightbox();
+        });
+
+        nextBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            currentIndex = (currentIndex + 1) % visibleItems.length;
+            openLightbox();
+        });
+
+        // Keyboard Navigation
+        document.addEventListener('keydown', (e) => {
+            if (!lightbox.classList.contains('active')) return;
+            if (e.key === 'Escape') lightbox.classList.remove('active');
+            if (e.key === 'ArrowRight') nextBtn.click();
+            if (e.key === 'ArrowLeft') prevBtn.click();
+        });
+    </script>
+</body>
+</html>

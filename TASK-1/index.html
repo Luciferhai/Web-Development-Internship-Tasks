@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohammad Imran | Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Background Blur Orbs -->
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">MI<span>.</span></a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="hero-section">
+        <div class="hero-container">
+            <div class="profile-wrapper">
+                <div class="profile-ring"></div>
+                <!-- fallback to beautiful default/initials design if profile.jpg is missing -->
+                <div class="profile-img-container">
+                    <img src="profile.jpg" alt="Mohammad Imran" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" class="profile">
+                    <div class="profile-fallback" style="display: none;">MI</div>
+                </div>
+            </div>
+            <h1 class="glitch-text">Mohammad Imran</h1>
+            <p class="subtitle">B.Tech CSE Student &bull; Web Development Intern</p>
+            <div class="cta-buttons">
+                <a href="#contact" class="btn btn-primary">Contact Me <i class="fa-solid fa-arrow-right"></i></a>
+                <a href="#projects" class="btn btn-secondary">View Work</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="card glass-card about-card">
+                <div class="about-icon"><i class="fa-solid fa-user-astronaut"></i></div>
+                <p>Hello! I'm <strong>Mohammad Imran</strong>, a passionate Computer Science and Engineering student. I enjoy learning web development and building responsive, user-friendly websites. I continuously improve my technical skills and explore modern web technologies to create impactful digital experiences.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="education" class="section">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            <div class="card glass-card education-card">
+                <div class="education-header">
+                    <div class="edu-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                    <div>
+                        <h3>B.Tech &ndash; Computer Science and Engineering</h3>
+                        <p class="school-name">Vaagdevi Engineering College</p>
+                    </div>
+                </div>
+                <span class="badge">In Progress</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="section">
+        <div class="container">
+            <h2 class="section-title">Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-tag"><i class="fa-brands fa-html5 html-color"></i> HTML</div>
+                <div class="skill-tag"><i class="fa-brands fa-css3-alt css-color"></i> CSS</div>
+                <div class="skill-tag"><i class="fa-brands fa-js js-color"></i> JavaScript</div>
+                <div class="skill-tag"><i class="fa-brands fa-python python-color"></i> Python</div>
+                <div class="skill-tag"><i class="fa-solid fa-code c-color"></i> C Programming</div>
+                <div class="skill-tag"><i class="fa-brands fa-github github-color"></i> GitHub</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title">Projects</h2>
+            <div class="project-grid">
+                <div class="card glass-card project-card">
+                    <div class="project-icon"><i class="fa-solid fa-briefcase"></i></div>
+                    <h3>Personal Portfolio</h3>
+                    <p>A responsive and modern portfolio website developed using clean semantic HTML and advanced modern CSS layout systems.</p>
+                    <div class="project-footer">
+                        <span class="tech-badge">HTML</span>
+                        <span class="tech-badge">CSS</span>
+                    </div>
+                </div>
+                <div class="card glass-card project-card">
+                    <div class="project-icon"><i class="fa-solid fa-rocket"></i></div>
+                    <h3>Landing Page</h3>
+                    <p>A high-converting, modern landing page with a fully responsive grid system, smooth scroll, and beautiful interactivity.</p>
+                    <div class="project-footer">
+                        <span class="tech-badge">HTML</span>
+                        <span class="tech-badge">CSS</span>
+                        <span class="tech-badge">JS</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title">Contact Me</h2>
+            <div class="card glass-card contact-card">
+                <form onsubmit="event.preventDefault(); alert('Message sent successfully!');">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" required placeholder="Enter your name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" required placeholder="Enter your email">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Your Message</label>
+                        <textarea id="message" required placeholder="Write your message here..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-submit">
+                        Send Message <i class="fa-solid fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Mohammad Imran. Built with passion &amp; CSS.</p>
+    </footer>
+</body>
+</html>

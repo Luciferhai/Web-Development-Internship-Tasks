@@ -1,1 +1,124 @@
-<!DOCTYPE html><html><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width,initial-scale=1'><link rel='stylesheet' href='style.css'><title>Landing</title></head><body><header><nav><h2>NovaAI</h2><ul><li>Home</li><li>Features</li><li>Contact</li></ul></nav><section class='hero'><div><h1>AI Startup</h1><p>Responsive landing page.</p></div></section></header><section class='features'><div>Feature 1</div><div>Feature 2</div><div>Feature 3</div></section><section class='testimonials'><blockquote>Great product!</blockquote></section><footer>©2026 NovaAI</footer></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NovaAI | Empowering the Future with AI</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Radial ambient glows -->
+    <div class="glow-orb glow-1"></div>
+    <div class="glow-orb glow-2"></div>
+
+    <header>
+        <nav>
+            <a href="#" class="logo">
+                <i class="fa-solid fa-wand-magic-sparkles"></i> Nova<span>AI</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact" class="nav-btn">Get Started</a></li>
+            </ul>
+        </nav>
+
+        <section class="hero">
+            <div class="hero-content">
+                <span class="badge"><i class="fa-solid fa-sparkles"></i> Introducing Nova v2.0</span>
+                <h1>Next-Gen AI for Smart Workflows</h1>
+                <p>Deploy custom-trained AI agents that automate your redundant operations, analyze high-dimensional data, and scale your business effortlessly.</p>
+                <div class="hero-actions">
+                    <a href="#features" class="btn btn-primary">Explore Features <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="#demo" class="btn btn-secondary">Request Demo</a>
+                </div>
+            </div>
+            <div class="hero-dashboard-preview">
+                <div class="preview-header">
+                    <div class="dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+                    <div class="preview-title">NovaAI Agent Dashboard</div>
+                </div>
+                <div class="preview-body">
+                    <div class="chart-mockup">
+                        <div class="bar bar-1"></div>
+                        <div class="bar bar-2"></div>
+                        <div class="bar bar-3"></div>
+                        <div class="bar bar-4"></div>
+                        <div class="bar bar-5"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </header>
+
+    <section id="features" class="features">
+        <div class="section-header">
+            <h2>Supercharged Features</h2>
+            <p>Everything you need to accelerate your cognitive automation pipelines.</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card glass-card">
+                <div class="icon-box purple-glow"><i class="fa-solid fa-brain"></i></div>
+                <h3>Neural Engines</h3>
+                <p>Equipped with state-of-the-art LLMs tailored to run securely on your corporate data.</p>
+            </div>
+            <div class="feature-card glass-card">
+                <div class="icon-box blue-glow"><i class="fa-solid fa-chart-line"></i></div>
+                <h3>Predictive Analytics</h3>
+                <p>Forecast shifts in business demand with hyper-accurate regression modeling in real time.</p>
+            </div>
+            <div class="feature-card glass-card">
+                <div class="icon-box cyan-glow"><i class="fa-solid fa-gears"></i></div>
+                <h3>Automated Workflows</h3>
+                <p>Link thousands of integrations with trigger-action pipelines using drag-and-drop mechanics.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="testimonials">
+        <div class="section-header">
+            <h2>Trusted by Visionaries</h2>
+        </div>
+        <div class="testimonial-card glass-card">
+            <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+            <blockquote>
+                NovaAI has completely changed how our team processes analytics. We transitioned from manual SQL reporting to complete natural language queries within two weeks. The productivity gains are astronomical.
+            </blockquote>
+            <div class="user-info">
+                <div class="user-avatar"><i class="fa-solid fa-user-tie"></i></div>
+                <div>
+                    <h4>Sarah Jenkins</h4>
+                    <p>VP of Operations at TechCorp</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="demo" class="demo-section">
+        <div class="demo-card glass-card">
+            <h2>Ready to transform your business?</h2>
+            <p>Join over 5,000+ industry-leading teams using NovaAI to automate their operations.</p>
+            <form onsubmit="event.preventDefault(); alert('Thank you! We will get in touch shortly.');" class="newsletter-form">
+                <input type="email" placeholder="Enter your business email" required>
+                <button type="submit">Join Beta <i class="fa-solid fa-paper-plane"></i></button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 NovaAI Inc. All rights reserved.</p>
+            <div class="socials">
+                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-github"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

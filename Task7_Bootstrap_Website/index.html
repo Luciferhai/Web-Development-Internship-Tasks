@@ -1,1 +1,334 @@
-<!DOCTYPE html><html><head><link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css' rel='stylesheet'></head><body><nav class='navbar navbar-dark bg-dark'><div class='container'><a class='navbar-brand'>FoodFest</a></div></nav><div class='container my-4'><div class='row'><div class='col-md-4'><div class='card'><div class='card-body'><h5>Burger</h5></div></div></div><div class='col-md-4'><div class='card'><div class='card-body'><h5>Pizza</h5></div></div></div></div></div><footer class='bg-dark text-white text-center p-3'>Footer</footer></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodFest | Gourmet Dining &amp; Bistro</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #faf9f6;
+            color: #2b2b2b;
+        }
+        
+        .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .navbar {
+            backdrop-filter: blur(10px);
+            background-color: rgba(33, 37, 41, 0.95) !important;
+            padding: 18px 0;
+        }
+        
+        .navbar-brand {
+            font-family: 'Playfair Display', serif;
+            font-weight: 800;
+            font-size: 24px;
+            letter-spacing: 0.5px;
+        }
+
+        .hero-section {
+            background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80') no-repeat center center;
+            background-size: cover;
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            color: white;
+        }
+
+        .hero-title {
+            font-size: clamp(38px, 6vw, 64px);
+            line-height: 1.15;
+        }
+
+        .btn-custom {
+            padding: 12px 28px;
+            font-weight: 600;
+            border-radius: 30px;
+            transition: all 0.3s;
+        }
+        
+        .btn-custom-primary {
+            background-color: #ff6b35;
+            border-color: #ff6b35;
+            color: white;
+        }
+        
+        .btn-custom-primary:hover {
+            background-color: #e0531f;
+            border-color: #e0531f;
+            transform: translateY(-2px);
+        }
+
+        .food-card {
+            border: none;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+            background-color: white;
+        }
+
+        .food-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+
+        .food-card-img-wrapper {
+            height: 220px;
+            overflow: hidden;
+        }
+
+        .food-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .food-card:hover img {
+            transform: scale(1.06);
+        }
+
+        .price-badge {
+            background-color: #ff6b35;
+            color: white;
+            font-weight: 700;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+
+        .carousel-item {
+            padding: 40px 10px;
+        }
+
+        .testimonial-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background-color: #e9ecef;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 28px;
+            color: #ff6b35;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand text-warning" href="#"><i class="fa-solid fa-utensils me-2"></i>FoodFest</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-span navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto gap-2">
+                    <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#menu">Menu</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#reviews">Reviews</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#booking">Book Table</a></li>
+                </ul>
+                <a href="#booking" class="btn btn-warning ms-3 btn-custom py-2 px-4 rounded-pill fw-bold text-dark">Reserve Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Banner -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7">
+                    <span class="badge bg-warning text-dark px-3 py-2 rounded-pill fw-bold mb-3"><i class="fa-solid fa-award me-1"></i> #1 Culinary Destination</span>
+                    <h1 class="hero-title font-serif fw-bold mb-3">Savor the Art of Modern Cuisine</h1>
+                    <p class="lead mb-4 text-white-50">Indulge in a sensory journey shaped by fresh organic ingredients, exquisite techniques, and passion in every plate.</p>
+                    <div class="d-flex gap-3 flex-wrap">
+                        <a href="#menu" class="btn btn-custom btn-custom-primary">Explore Menu <i class="fa-solid fa-arrow-right ms-1"></i></a>
+                        <a href="#booking" class="btn btn-custom btn-outline-light">Book Table</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Grid Menu Section -->
+    <section id="menu" class="py-5 my-3">
+        <div class="container">
+            <div class="text-center mb-5">
+                <span class="text-warning fw-bold text-uppercase tracking-wide d-block mb-2">Our Specialties</span>
+                <h2 class="font-serif fw-bold fs-1">Critically Acclaimed Delicacies</h2>
+            </div>
+            
+            <div class="row g-4 justify-content-center">
+                <!-- Card 1 (Burger) -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card food-card h-100">
+                        <div class="food-card-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=500&q=80" alt="Burger">
+                        </div>
+                        <div class="card-body p-4 d-flex flex-column">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h5 class="fw-bold mb-0">Classic Cheese Burst</h5>
+                                <span class="price-badge">$12.99</span>
+                            </div>
+                            <p class="text-muted flex-grow-1">Char-grilled Angus beef patty topped with dynamic layers of cheddar, truffle mayo, and caramelized onions on a brioche bun.</p>
+                            <button class="btn btn-outline-warning w-100 btn-custom py-2">Order Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 (Pizza) -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card food-card h-100">
+                        <div class="food-card-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=500&q=80" alt="Pizza">
+                        </div>
+                        <div class="card-body p-4 d-flex flex-column">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h5 class="fw-bold mb-0">Neapolitan Margherita</h5>
+                                <span class="price-badge">$14.99</span>
+                            </div>
+                            <p class="text-muted flex-grow-1">Hand-stretched sourdough topped with San Marzano tomato marinara, fresh dynamic buffalo mozzarella, and aromatic basil.</p>
+                            <button class="btn btn-outline-warning w-100 btn-custom py-2">Order Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 (Dessert) -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card food-card h-100">
+                        <div class="food-card-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=500&q=80" alt="Dessert">
+                        </div>
+                        <div class="card-body p-4 d-flex flex-column">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h5 class="fw-bold mb-0">Velvety Choco Lava</h5>
+                                <span class="price-badge">$8.49</span>
+                            </div>
+                            <p class="text-muted flex-grow-1">Warm dark chocolate sponge cake oozing with molten cocoa lava center, served with Madagascan vanilla gelato.</p>
+                            <button class="btn btn-outline-warning w-100 btn-custom py-2">Order Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Slider Section -->
+    <section id="reviews" class="py-5 bg-dark text-white">
+        <div class="container text-center py-4">
+            <h2 class="font-serif fw-bold mb-5 fs-1 text-warning">What Our Guests Say</h2>
+            
+            <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="testimonial-avatar"><i class="fa-solid fa-quote-left"></i></div>
+                        <p class="lead font-serif fs-4 px-lg-5 mb-4">"The Neapolitan Margherita pizza was sublime. The crust was light, airy, and crisp. Absolutely the best Italian experience in the city!"</p>
+                        <h5 class="fw-bold text-warning mb-0">Marcus Aurelius</h5>
+                        <p class="text-white-50">Connoisseur &amp; Writer</p>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="testimonial-avatar"><i class="fa-solid fa-quote-left"></i></div>
+                        <p class="lead font-serif fs-4 px-lg-5 mb-4">"Service was flawless and the ambience is warm. The cheese burst burger is a masterclass in gastronomy. Will definitely return."</p>
+                        <h5 class="fw-bold text-warning mb-0">Helena Troy</h5>
+                        <p class="text-white-50">Local Reviewer</p>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Booking Section -->
+    <section id="booking" class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 card border-0 shadow-lg p-5 rounded-4 bg-white">
+                    <div class="text-center mb-4">
+                        <h2 class="font-serif fw-bold">Secure Your Table</h2>
+                        <p class="text-muted">Book a reservation instantly for an unforgettable dining experience.</p>
+                    </div>
+                    <form onsubmit="event.preventDefault(); alert('Reservation confirmed! See you at FoodFest.');">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label class="form-label fw-bold">Full Name</label>
+                                <input type="text" class="form-control p-3 rounded-3" placeholder="John Doe" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label fw-bold">Email Address</label>
+                                <input type="email" class="form-control p-3 rounded-3" placeholder="john@example.com" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label fw-bold">Number of Guests</label>
+                                <select class="form-select p-3 rounded-3" required>
+                                    <option value="2">2 Guests</option>
+                                    <option value="4">4 Guests</option>
+                                    <option value="6">6+ Guests</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label fw-bold">Date</label>
+                                <input type="date" class="form-control p-3 rounded-3" required>
+                            </div>
+                            <div class="col-12 text-center mt-4">
+                                <button type="submit" class="btn btn-warning btn-custom py-3 px-5 rounded-pill fw-bold text-dark w-100 shadow">Confirm Reservation</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Multi-Column Footer -->
+    <footer class="bg-dark text-white-50 py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <h5 class="text-white font-serif mb-3">FoodFest</h5>
+                    <p>Dedicated to crafting world-class culinary experiences that honor tradition and embrace contemporary styles.</p>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <h5 class="text-white mb-3">Hours of Operation</h5>
+                    <p class="mb-1">Mon - Fri: 12:00 PM - 11:00 PM</p>
+                    <p>Sat - Sun: 11:00 AM - 12:00 AM</p>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <h5 class="text-white mb-3">Stay Connected</h5>
+                    <div class="d-flex gap-3 fs-5">
+                        <a href="#" class="text-white-50 hover-text-white"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="text-white-50 hover-text-white"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#" class="text-white-50 hover-text-white"><i class="fa-brands fa-x-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="border-secondary my-4">
+            <div class="text-center">
+                <p class="mb-0">&copy; 2026 FoodFest Gourmet. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 Bundle JS with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

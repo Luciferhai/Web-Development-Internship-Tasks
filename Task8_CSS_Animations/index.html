@@ -1,1 +1,80 @@
-<!DOCTYPE html><html><head><link rel='stylesheet' href='style.css'></head><body><h1 class='fade'>Animated Webpage</h1><button>Hover Me</button></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Animation Labs | Interactive Playground</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="space-grid"></div>
+    <div class="ambient-light"></div>
+
+    <header class="fade-down">
+        <div class="header-logo"><i class="fa-solid fa-wand-magic-sparkles rotate-magic"></i> Motion<span>Lab</span></div>
+        <h1>Interactive Animation Playground</h1>
+        <p>A high-performance demonstration of hardware-accelerated CSS keyframe loops, custom transitions, and interactive hover mechanics.</p>
+    </header>
+
+    <main class="playground-grid">
+        <!-- Card 1: Keyframe Slide Up Entrance -->
+        <div class="glass-card anim-card card-slide-in" style="--delay: 1;">
+            <div class="card-header">
+                <span class="label">Keyframe Loop</span>
+                <h3>01. Infinite Float</h3>
+            </div>
+            <div class="canvas">
+                <div class="floating-sphere"></div>
+            </div>
+            <p class="description">Utilizes a sinusoidal alternate translate loop to simulate zero-gravity weightlessness.</p>
+        </div>
+
+        <!-- Card 2: Interactive Glow & Pulse -->
+        <div class="glass-card anim-card card-slide-in" style="--delay: 2;">
+            <div class="card-header">
+                <span class="label">Transition &amp; Shadow</span>
+                <h3>02. Pulse &amp; Neon Glow</h3>
+            </div>
+            <div class="canvas">
+                <button class="pulse-btn">Hover &amp; Press Me</button>
+            </div>
+            <p class="description">Applies box-shadow scaling transitions combined with a sub-frequency background pulse.</p>
+        </div>
+
+        <!-- Card 3: Infinity Rotator -->
+        <div class="glass-card anim-card card-slide-in" style="--delay: 3;">
+            <div class="card-header">
+                <span class="label">Linear Loop</span>
+                <h3>03. Orbital Gear</h3>
+            </div>
+            <div class="canvas">
+                <div class="gear-spinner"><i class="fa-solid fa-gear"></i></div>
+            </div>
+            <p class="description">Uses linear endless rotation properties to demonstrate keyframe duration alignment.</p>
+        </div>
+
+        <!-- Card 4: 3D perspective hover -->
+        <div class="glass-card anim-card card-slide-in" style="--delay: 4;">
+            <div class="card-header">
+                <span class="label">3D Transform</span>
+                <h3>04. Perspective Tilt</h3>
+            </div>
+            <div class="canvas perspective-container">
+                <div class="tilt-card">
+                    <i class="fa-solid fa-cube"></i>
+                    <span>3D CARD</span>
+                </div>
+            </div>
+            <p class="description">Applies custom rotations along X and Y axes on hover to mimic hardware-rendered depth.</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 MotionLab. Rendered at 60 FPS.</p>
+    </footer>
+</body>
+</html>

@@ -1,1 +1,123 @@
-<!DOCTYPE html><html><head><link rel='stylesheet' href='style.css'></head><body><div class='c'><h1 class='g'>Google</h1><input placeholder='Search Google'><br><button>Google Search</button><button>I'm Feeling Lucky</button></div></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <a href="#">About</a>
+            <a href="#">Store</a>
+        </div>
+        <div class="header-right">
+            <a href="#">Gmail</a>
+            <a href="#">Images</a>
+            <button class="menu-btn" title="Google apps"><i class="fa-solid fa-ellipsis-vertical"></i><i class="fa-solid fa-ellipsis-vertical"></i><i class="fa-solid fa-ellipsis-vertical"></i></button>
+            <button class="sign-in-btn">Sign in</button>
+        </div>
+    </header>
+
+    <main>
+        <div class="search-container">
+            <div class="google-logo">
+                <span class="l-blue">G</span><span class="l-red">o</span><span class="l-yellow">o</span><span class="l-blue">g</span><span class="l-green">l</span><span class="l-red">e</span>
+            </div>
+            
+            <div class="search-box-wrapper">
+                <div class="search-box">
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    <input type="text" id="search-input" autofocus autocomplete="off">
+                    <div class="search-actions">
+                        <i class="fa-solid fa-microphone mic-icon" title="Search by voice"></i>
+                        <i class="fa-solid fa-camera camera-icon" title="Search by image"></i>
+                    </div>
+                </div>
+                <!-- Interactive Suggestions Dropdown -->
+                <div class="suggestions-box" id="suggestions-box">
+                    <div class="suggestion-item"><i class="fa-solid fa-clock-rotate-left"></i><span>web development internship tasks</span></div>
+                    <div class="suggestion-item"><i class="fa-solid fa-magnifying-glass"></i><span>how to build responsive web designs</span></div>
+                    <div class="suggestion-item"><i class="fa-solid fa-magnifying-glass"></i><span>google chrome offline dinosaur game</span></div>
+                    <div class="suggestion-item"><i class="fa-solid fa-magnifying-glass"></i><span>vaagdevi engineering college portfolio</span></div>
+                </div>
+            </div>
+
+            <div class="buttons">
+                <button onclick="handleSearch()">Google Search</button>
+                <button onclick="handleLucky()">I'm Feeling Lucky</button>
+            </div>
+
+            <p class="language-offer">Google offered in: <a href="#">हिन्दी</a> <a href="#">বাংলা</a> <a href="#">తెలుగు</a> <a href="#">मराठी</a> <a href="#">தமிழ்</a></p>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-top">
+            <span>India</span>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-links-left">
+                <a href="#">About</a>
+                <a href="#">Advertising</a>
+                <a href="#">Business</a>
+                <a href="#">How Search works</a>
+            </div>
+            <div class="footer-links-right">
+                <a href="#">Privacy</a>
+                <a href="#">Terms</a>
+                <a href="#">Settings</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const searchInput = document.getElementById('search-input');
+        const suggestionsBox = document.getElementById('suggestions-box');
+
+        searchInput.addEventListener('focus', () => {
+            suggestionsBox.style.display = 'block';
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.search-box-wrapper')) {
+                suggestionsBox.style.display = 'none';
+            }
+        });
+
+        // Add suggestion click handler
+        const items = document.querySelectorAll('.suggestion-item');
+        items.forEach(item => {
+            item.addEventListener('click', () => {
+                searchInput.value = item.querySelector('span').innerText;
+                suggestionsBox.style.display = 'none';
+            });
+        });
+
+        function handleSearch() {
+            const query = searchInput.value;
+            if (query.trim()) {
+                window.location.href = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
+            } else {
+                alert('Please enter a search term!');
+            }
+        }
+
+        function handleLucky() {
+            window.location.href = 'https://www.google.com/doodles';
+        }
+
+        // Add enter key support
+        searchInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                handleSearch();
+            }
+        });
+    </script>
+</body>
+</html>
