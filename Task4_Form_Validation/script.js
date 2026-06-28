@@ -1,0 +1,1 @@
+function v(){let n=name.value,e=email.value,p=phone.value,m=document.getElementById('m').value;let em=document.getElementById('e').value;if(!document.getElementById('n').value||!em||!document.getElementById('p').value||!m){alert('Fill all fields');return false;}if(!/^\S+@\S+\.\S+$/.test(em)){alert('Invalid email');return false;}alert('Submitted');return false;}
